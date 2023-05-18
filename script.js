@@ -1,18 +1,17 @@
 // complete the given function
 
 function palindrome(str){
-    let string = str.replaceAll(" " , "");
-	let s = string;
-	let s1 = "";
-	for(let x=s.length-1;x>=0;x--){
-		s1+=s[x];
+   let ispalin = true;
+	let i=0;
+	let j=str.length-1;
+	while(i<=j && ispalin){
+		if(str[i] !== str[j]){
+			ispalin = false;
+		}
+		i++;
+		j--;
 	}
-	if(s1 === string){
-		console.log(true);
-	}
-	else{
-		console.log(false);
-	}
+	console.log(ispalin ? true : false);
 }
 
 module.exports = palindrome
